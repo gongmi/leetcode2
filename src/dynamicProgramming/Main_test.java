@@ -10,6 +10,7 @@ public class Main_test {
 	System.out.println(	Arrays.binarySearch(a, 1));
 	System.out.println(	Arrays.binarySearch(a, 4));
 	System.out.println(	Arrays.binarySearch(a, 8));
-	Integer.MAX_VALUE
+	String s;
 	}
+	
 }
