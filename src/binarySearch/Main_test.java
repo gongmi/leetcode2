@@ -13,6 +13,5 @@ import java.util.TreeMap;
 public class Main_test {
 
 	public static void main(String[] args) {
-		System.out.println(Math.ceil(2.5)); 
 	}
 }
