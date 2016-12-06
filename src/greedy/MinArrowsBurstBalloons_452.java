@@ -9,7 +9,7 @@ public class MinArrowsBurstBalloons_452 {
 	public int findMinArrowShots(int[][] points) {
 		if (points.length == 0)
 			return 0;
-//		leetcode中可以用下面的方式排序 这是java 8 我的jdk还是7
+//		leetcode中可以用下面的方式排序
 //		  Arrays.sort(points, (a, b)->(a[0]-b[0]));
 		Arrays.sort(points, new Comparator<int[]>() {
 			public int compare(int[] o1, int[] o2) {
