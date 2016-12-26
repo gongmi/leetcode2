@@ -18,7 +18,8 @@ public class Main_test {
 		PriorityQueue<Integer> pq=new PriorityQueue<Integer>(5);
 		pq.add(5);
 		pq.add(3);
-		
+		int[] citations;
+		Arrays.sort(citations,((a,b)->(b-a)));
 		pq.add(1);
 		pq.add(2);
 	
