@@ -35,12 +35,13 @@ public class Main_test {
 		map2.put('B',2);
 		map2.put('C',3);
 
-	char[] array1=new char[]{'b','b','b','a'};
+	char[] array1=new char[]{'1','2','3'};
 	Arrays.sort(array1); 
 	char[] array2=new char[]{'1','2','3'};
 	
 	System.out.println(map1);
 	System.out.println(array1.equals(array2));
+	System.out.println(Arrays.equals(array1,array2));
 	}
 
 }

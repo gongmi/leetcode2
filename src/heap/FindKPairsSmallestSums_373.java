@@ -28,8 +28,8 @@ public class FindKPairsSmallestSums_373 {
 }
 
 class Pair implements Comparable<Pair> {
-	int i1, i2;
-	int[] a1, a2;
+	public int i1, i2;
+	public int[] a1, a2;
 
 	public Pair(int index1, int index2, int[] arr1, int[] arr2) {
 		i1 = index1;
