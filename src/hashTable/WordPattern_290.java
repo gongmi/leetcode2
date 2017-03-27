@@ -8,7 +8,7 @@ public class WordPattern_290 {
 //	利用了put返回的值
 //     @return the previous value associated with key,
 //        	or null if there was no mapping for key.
-
+//	因此一一对应仿佛可以用这种方法实现
 	public boolean wordPattern(String pattern, String str) {
 	    String[] words = str.split(" ");
 	    if (words.length != pattern.length())

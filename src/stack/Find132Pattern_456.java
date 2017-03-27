@@ -55,16 +55,23 @@ public class Find132Pattern_456 {
 		Stack<Integer> stack = new Stack<>(); 
 		int min = Integer.MAX_VALUE;
 		for (int num : nums) {
-			if (num <= min) {
+			if (num <= min) {  //当遇到当前的min时 永远存起来 不要去stack中做任何事情
 				min = num;
-			} else {
+			} else {  //当遇到一个num比 int min 大时
 				while (!stack.empty()) {
-					if (stack.peek() >= num) //min >= num
-						break;
-					stack.pop();
-					if (stack.pop() > num)  //max >= num
+					if (stack.peek() >= num) // num <= pair的min 
+						break;//说明它和当前min这个pair和stack中的pair不会重合 （在stack pair的右边）
+					          //因此stack中的pair不能pop出来 所以break；
+					//不满足 说明 pair的min < num 有可能成功  stack中的pair必须pop出来 因为要嘛成功要嘛 被覆盖
+							  
+					stack.pop();     //pair的min弹出来不要了 因为int min反正保存着 或者有更小的min了呢
+					if (stack.pop() > num)  //pair的max > num  成功
 						return true;
+					//不满足 说明 pair的max < num  说明它和当前min这个pair和stack中刚刚弹出来的pair重合了（它包括了原来的pair） 
+				  //因此while循环 继续看
 				}
+				
+				//放入新的pair
 				stack.push(num);
 				stack.push(min);
 			}

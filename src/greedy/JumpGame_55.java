@@ -28,10 +28,9 @@ public class JumpGame_55 {
 	// 而且时间很棒 我真厉害 很多答案都是從前往後 我覺得我的更好
 	public boolean canJump2(int[] nums) {
 		int small = nums.length - 1;
-		for (int i = nums.length - 1; i >= 0; i--) {
+		for (int i = nums.length - 1; i >= 0; i--)
 			if (nums[i] + i >= small)
 				small = i;
-		}
 		return (small == 0);
 	}
 }

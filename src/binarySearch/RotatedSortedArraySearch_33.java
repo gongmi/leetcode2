@@ -7,12 +7,10 @@ public class RotatedSortedArraySearch_33 {
 		int left = 0;
 		int right = nums.length - 1;
 		int res = -1;
-
 		while (left <= right) {
 			int mid = left + (right - left) / 2;
 			if (nums[mid] == target) {
-				res = mid;
-				return res;
+				res = mid; return res;
 			}
 
 			if (nums[mid] < nums[right]) {

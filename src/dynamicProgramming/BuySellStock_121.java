@@ -65,12 +65,12 @@ public class BuySellStock_121 {
 	// 用Kadane算法 只遍历一遍数组
 	// 当前面那些差加起来小于0 就不要了
 	public int maxProfit2(int[] prices) {
-		int maxCur = 0, maxSoFar = 0;
+		int sum = 0, maxSoFar = 0;
 		for (int i = 1; i < prices.length; i++) {
-			maxCur += prices[i] - prices[i - 1];
-			if (maxCur < 0)
-				maxCur = 0;
-			maxSoFar = Math.max(maxCur, maxSoFar);
+			sum += prices[i] - prices[i - 1];
+			if (sum < 0)
+				sum = 0;
+			maxSoFar = Math.max(sum, maxSoFar);
 		}
 		return maxSoFar;
 	}

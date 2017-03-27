@@ -1,6 +1,6 @@
 package hashTable;
 
-
+//FindAllAnagrams_438相似的模板代码
 public class MinimumWindowSubstring_76 {
 	// top answer 的template
 //	其实和我的差不多 只是它用的while (count == 0) {

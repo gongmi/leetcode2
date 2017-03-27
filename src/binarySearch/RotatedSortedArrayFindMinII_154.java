@@ -2,6 +2,8 @@ package binarySearch;
 
 public class RotatedSortedArrayFindMinII_154 {
 //	可以有重复  我讨论了许多情况
+	
+	
 	public int findMin(int[] nums) {
 		int left = 0,temp;
 		int right = nums.length - 1;
@@ -12,7 +14,7 @@ public class RotatedSortedArrayFindMinII_154 {
 			else if (nums[mid] > nums[right])
 				left = mid + 1;
 			else   //mid==right时
-				 right--;//别人的方法 简单粗暴 多么好
+				 right--;//别人的方法 简单粗暴 多么好 如果等于的话 就只移动一个嘛
 //			{
 //			    if(nums[left]<nums[right]) 
 //			    return nums[left];

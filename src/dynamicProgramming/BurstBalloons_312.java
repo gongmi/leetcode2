@@ -2,16 +2,21 @@ package dynamicProgramming;
 
 public class BurstBalloons_312 {
 	//这个解法与HouseRobber_198 我写的 自底向上 bottom-top很像
-	//但是我就是不敢确定是不是
-//	S[start][end] = Math.max(S[start][end], 
-//	new_nums[start]* new_nums[k] * new_nums[end]+ S[start][k] + S[k][end]);
-//	思想都是这种思想 就是先把短的算出来 长的可以用短的
+//S[start][end] = Math.max
+//(S[start][end],new_nums[start]* new_nums[k] * new_nums[end]+ S[start][k] + S[k][end]);
+//	注意这里的思想很重要  
+//	这里的k表示的是最后一爆炸的气球
+//	最后一个爆炸的气球爆炸的时候的金币就是new_nums[start]* new_nums[k] * new_nums[end]
+//	因为S[start][end]中 start 与end 都是边界 都是不能爆炸的	
+//	当k作为最后一个爆炸的时候 就可以把S[start][end]分为
+//	S[start][k]与两部分S[k][end] 这两部分都是以k作为边界的 因为k是最后一个爆的 所以边界是不能爆的！
+//	
 	public int maxCoins(int[] nums) {
 		int l = nums.length;
 		int[] new_nums = new int[l + 2];
 		int n = 1;
 		for (int i : nums)
-			if (i > 0) {
+			if (i > 0) { // burst all the zero balloons in the first round 
 				new_nums[n] = i;
 				n++;
 			}

@@ -9,7 +9,7 @@ public class ValidAnagram_242 {
 	public boolean isAnagram(String s, String t) {
 		if (s.length() != t.length())
 			return false;
-		Map<Character, Integer> map = new HashMap<Character, Integer>();
+		Map<Character, Integer> map = new HashMap<>();
 		for (int i = 0; i < s.length(); i++)
 			map.put(s.charAt(i), map.getOrDefault(s.charAt(i), 0) + 1);
 
@@ -28,8 +28,8 @@ public class ValidAnagram_242 {
 		char[] t_array = t.toCharArray();
 		Arrays.sort(s_array);
 		Arrays.sort(t_array);
-		return Arrays.equals(s_array, t_array);
-
+		return Arrays.equals(s_array, t_array);//注意这里比较两个数组是否相等
+//		不是用s_array.equals(t_array); 这相当于s_array== t_array
 	}
 
 	// 7ms 理论O(n) 把每个字母的frequency放在一个数组里 top答案都是这个方法 因为只包含小写字母

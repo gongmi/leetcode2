@@ -6,7 +6,8 @@ import java.util.Map;
 
 public class MajorityElement_169 {
 	
-	//与SingleNumberIII_260 类似的解法
+//与SingleNumberII_137 类似的解法 就是分析每一个bit在总的数里的情况
+//	这边是析每一个bit为1 的数大于总数的一半
 	public int majorityElement(int[] nums) {
 		int result = 0;
 		int bit1, sum;

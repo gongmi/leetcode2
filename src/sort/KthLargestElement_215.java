@@ -25,7 +25,7 @@ public class KthLargestElement_215 {
 
 	}
 
-	// ∂—≈≈–Ú O(N lg K) running time + O(K) memory
+	// ∂—≈≈–Ú O(N KlgN ) running time + O(K) memory
 	public int findKthLargest(int[] nums, int k) {
 		PriorityQueue<Integer> pq = new PriorityQueue<>();
 		for (int n : nums) {

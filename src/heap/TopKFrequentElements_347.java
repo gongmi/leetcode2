@@ -8,7 +8,9 @@ import java.util.PriorityQueue;
 import java.util.TreeMap;
 
 public class TopKFrequentElements_347 {
+	
 	// 法1 bucket sort bucket Array
+	//	先 HashMap<Number,frequency>
 	// 其实这个方法挺傻的 为什么要把freq bucket放在一个数组里
 	// 应该是空间换时间 空间是很多浪费的 但是时间复杂度是 O(n)
 	public List<Integer> topKFrequent(int[] nums, int k) {
@@ -61,7 +63,7 @@ public class TopKFrequentElements_347 {
 		return res.subList(0, k);
 	}
 
-	// 法3 把 HashMap<Number,frequency>中的Entry放在PriorityQueue中 自定义排序
+	// 法3 把 HashMap<Number,frequency>中的Entry放在PriorityQueue中 自定义排序 按freq降序
 	// 理论上是O(n log n) 可是其实很慢？
 	public List<Integer> topKFrequent3(int[] nums, int k) {
 		int len = nums.length;
@@ -79,7 +81,7 @@ public class TopKFrequentElements_347 {
 			res.add(pq.poll().getKey());
 
 		
-//		或者这样处理queue 顺序排列 大小为k 超过k 就把头部（小的） 删掉 
+//		或者这样处理queue 自定义排序 按freq升序    大小为k 超过k 就把头部（小的） 删掉 
 //	    PriorityQueue<Map.Entry<Integer, Integer>> pq = new PriorityQueue<>((a, b) -> a.getValue()-b.getValue());
 //	    for(Map.Entry<Integer, Integer> entry : counterMap.entrySet()) {
 //	        pq.offer(entry);

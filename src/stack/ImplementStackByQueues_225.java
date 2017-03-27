@@ -42,13 +42,13 @@ public class ImplementStackByQueues_225 {
 	    private Queue<Integer> queue = new LinkedList<>();
 
 	    public void push(int x) {
-	        queue.add(x);
+	        queue.offer(x);
 	        for (int i=1; i<queue.size(); i++)
-	            queue.add(queue.remove());
+	            queue.offer(queue.poll());
 	    }
 
 	    public void pop() {
-	        queue.remove();
+	        queue.poll();
 	    }
 
 	    public int top() {

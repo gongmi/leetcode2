@@ -47,7 +47,9 @@ public class ANDNumbersRange_201 {
 	    while((m&r)!=(n&r))  r=r<<1;
 	    return n&r;
 	}
-	
+	// m 0011 001
+	// n 0011 111
+//res    0011 000 	
 	 public int rangeBitwiseAnd4(int m, int n) {
 	        while(m<n) n = n & (n-1);
 	        return n;

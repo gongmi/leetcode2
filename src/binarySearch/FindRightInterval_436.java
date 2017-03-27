@@ -1,14 +1,19 @@
 package binarySearch;
 
-import java.util.Map;
-import java.util.TreeMap;
-
+import java.util.*;
+class Interval {
+	int start;
+	int end;
+	Interval(int s, int e) { start = s; end = e; }
+}
 public class FindRightInterval_436 {
-	// 法1 用TreeMap treemap自动排序了 当找时某一个key时 由于是红黑树 应该也是用lgn的时间 所以总的是n*lgn
+	// 法1 用TreeMap treemap自动排序了 当找某一个key时 由于是红黑树 应该也是用lgn的时间 所以总的是n*lgn
 	public int[] findRightInterval(Interval[] intervals) {
 
 		int len = intervals.length;
 		// 一定要定义成TreeMap 因为要用ceilingEntry方法 这个方法在Map没有！！
+//		所以在编译时会出错 因为编译时 map还是Map类型的 可是Map里面并没有ceilingEntry接口方法
+//		不能完成向上转型
 		TreeMap<Integer, Integer> map = new TreeMap<Integer, Integer>();
 
 		for (int i = 0; i < len; i++)
@@ -43,7 +48,7 @@ public class FindRightInterval_436 {
 			sintervals[i] = new Interval(intervals[i].start, i);
 		}
 		// 我是jdk7 IDE不认识 太丑了 我就注释了 应该解开的
-		// Arrays.sort(sintervals, (a, b)->a.start-b.start);
+//		 Arrays.parallelSort(sintervals, (o1, o2)->o1.start-o2.start);
 
 		int i = 0;
 		for (; i < n; ++i) {

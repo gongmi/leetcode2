@@ -1,7 +1,7 @@
 package stack;
 
 import java.util.Stack;
-
+//这道题做得很巧妙 特别是s.isEmpty()? 的三目运算符 要学会使用啊！
 public class TrappingRainWater_42 {
 	public int trap(int[] A) {
         if (A==null) return 0;

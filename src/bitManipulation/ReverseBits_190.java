@@ -1,8 +1,8 @@
 package bitManipulation;
 
 public class ReverseBits_190 {
-	 // you need treat n as an unsigned value
-	//首先把第一位符号位 置为0
+	 // 题目中有you need treat n as an unsigned value
+	//因此我首先把第一位符号位 置为0 我的解法简直垃圾
 	public int reverseBits(int n) {
 		int bit32 = 0;
 		if ((n & 0x80000000) != 0) {

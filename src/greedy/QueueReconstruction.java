@@ -5,6 +5,8 @@ import java.util.Comparator;
 import java.util.LinkedList;
 //注意；排序的应用 因为许多insert 所以用linkedlist 
 //并且toarray的应用 用 public <T> T[] toArray(T[] a) {
+//不能用toArray() 因为返回一个object【】
+//并且这里要写明是二维数组
 
 
 public class QueueReconstruction {
@@ -24,7 +26,8 @@ public class QueueReconstruction {
 		for (int[] p : people)
 			l.add(p[1], p);
 		return l.toArray(new int[people.length][]);
-//		 21 ms
-//		 return l.toArray(new int[0][0]);
+//		return l.toArray(new int[0][0]);
+//		return (int[][])l.toArray();  
+
 	}
 }

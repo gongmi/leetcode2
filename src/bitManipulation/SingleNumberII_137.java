@@ -21,6 +21,11 @@ public class SingleNumberII_137 {
 	
 	
 	//另一种清晰地方法 但是时间是32*n  的 相当于上面的方法一把算了32位的模3加法
+	
+	
+	//与MajorityElement_169 类似的解法 就是分析每一个bit在总的数里的情况
+//	这边是分析每一个bit为1 的个数 并且把这个个数  % 3 
+//	剩下的就是唯一的那个数
 	public int singleNumber(int[] A) {
 		int result = 0;
 		int bit1, sum;

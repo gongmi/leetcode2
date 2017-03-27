@@ -7,7 +7,6 @@ public class IncreasingTripletSubsequence_334 {
 	public boolean increasingTriplet(int[] nums) {
 		if (nums.length < 3)
 			return false;
-
 		int dp1 = nums[0];
 		int dp2 = Integer.MAX_VALUE;
 		int len = 0;
@@ -16,6 +15,20 @@ public class IncreasingTripletSubsequence_334 {
 				dp1 = nums[i];
 			else if (nums[i] <= dp2)
 				dp2 = nums[i];
+			else
+				return true;
+		}
+		return false;
+	}
+
+	// 第二次做的答案 仿佛更简化一些
+	public boolean increasingTriplet2(int[] nums) {
+		int first = Integer.MAX_VALUE, second = Integer.MAX_VALUE;
+		for (int num : nums) {
+			if (num <= first)
+				first = num;
+			else if (num <= second)
+				second = num;
 			else
 				return true;
 		}
