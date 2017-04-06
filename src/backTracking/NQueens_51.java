@@ -8,7 +8,7 @@ public class NQueens_51 {
 	int[] q;
 
 	public List<List<String>> solveNQueens(int n) {
-		q = new int[n];
+		q = new int[n];  //q[i]代表 第i行的皇后 放在第 q[i]的列位置
 		place(0);
 		return res;
 	}

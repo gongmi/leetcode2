@@ -5,7 +5,7 @@ import java.util.Arrays;
 
 public class TwoSumII_167 {
 	
-	//没有用binarysearch two pointer 时间复杂度O（n）
+	// 正确的方法 时间复杂度O（n）
 	public int[] twoSum2(int[] numbers, int target) {
 	    int start = 0, end = numbers.length - 1;
 	    while(start < end){
@@ -16,10 +16,12 @@ public class TwoSumII_167 {
 	    return new int[]{start + 1, end + 1};
 	}
 
-	//@param fromIndex the index of the first element (inclusive) to be searched
-	//@param toIndex the index of the last element (exclusive) to be searched
+	//@param fromIndex  (inclusive) 
+	//@param toIndex    (exclusive) 
 	//exclusive！！！！！！！！ 
-	//我的方法 不够好 时间更多	
+	
+	
+	//  错误的方法 二分法	
 	public int[] twoSum(int[] numbers, int target) {
 		int[] array = new int[2];
 		int another = 0;

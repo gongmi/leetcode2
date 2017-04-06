@@ -74,7 +74,8 @@ public class RandomizedCollection_381 {
 			return list.get(random_index);
 		}
 	}
-	//别人的答案和我一样的思想  只是更优化一些
+	//别人的答案和我一样的思想  只是更优化一些他利用了连缀性 比如locs.get(val).iterator().next();
+//	这样就少建了很多对象
 	public class RandomizedCollection2 {
 	    ArrayList<Integer> nums;
 		HashMap<Integer, Set<Integer>> locs;

@@ -2,8 +2,7 @@ package backTracking;
 
 import java.util.LinkedList;
 import java.util.List;
-//Arraylist 比Linkedlist快多了
-
+//Arraylist 比Linkedlist快多了 因为remove（index）
 public class Combinations_77 {
 	public List<List<Integer>> combine(int n, int k) {
 		List<List<Integer>> list = new LinkedList<>();

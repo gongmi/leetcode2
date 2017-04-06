@@ -2,6 +2,7 @@ package backTracking;
 
 import java.util.ArrayList;
 import java.util.List;
+
 //哈哈 一下子就做出了
 public class GenerateParentheses_22 {
 	public List<String> generateParenthesis(int n) {
@@ -10,8 +11,7 @@ public class GenerateParentheses_22 {
 		return list;
 	}
 
-	private void backtrack(List<String> list, StringBuilder sb, int n,
-			int left, int right) {
+	private void backtrack(List<String> list, StringBuilder sb, int n, int left, int right) {
 		if (sb.length() == 2 * n)
 			list.add(sb.toString());
 		if (left < n) {
@@ -27,4 +27,3 @@ public class GenerateParentheses_22 {
 	}
 
 }
-

@@ -27,31 +27,11 @@ public class BinaryTreeToLinkedList_114 {
 		}
 	}
 
-	// top答案 普通人想不到的
-    //      1
-    //     / \
-    //    2   3      
-    //   变成
-    //      1
-    //       \
-    //        2
-    //         \
-    //          3
-    //      1
-    //     / \
-    //    2   4 
-    //     \   \
-    //      3   5 
-    //     变成
-    //      1
-    //       \
-    //        2
-    //         \
-    //          3 
-    //           \
-    //            4
-    //             \
-    //              5
+// top答案 其实就是递归的前序遍历 前序遍历的顺序是中左右
+//	但是这边要先找到最右结点 让它作为prev 再找左 再找中 让当前root的right =prev即可完成
+//	其实就是 右左中这样一个遍历的顺序 
+//	与剑指offer的BSTtoDoubleLinkedList_27相似
+ 
 	private TreeNode prev = null;
 
 	public void flatten(TreeNode root) {

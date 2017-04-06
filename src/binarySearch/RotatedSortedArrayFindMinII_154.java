@@ -1,9 +1,9 @@
 package binarySearch;
 
 public class RotatedSortedArrayFindMinII_154 {
-//	可以有重复  我讨论了许多情况
-	
-	
+
+//	剑指offer第八题 可是书上的code没有这个好	
+//	可以有重复  我讨论了许多情况 其实不用讨论 当遇到相同的时候就顺序查找	
 	public int findMin(int[] nums) {
 		int left = 0,temp;
 		int right = nums.length - 1;

@@ -6,7 +6,7 @@ import java.util.PriorityQueue;
 public class KthLargestElement_215 {
 	// 快速选择排序Quick select 分治法
 //	用快速排序的思想 先把它一分为2  然后判断pivot与k的关系 来决定选哪一边继续partition
-//	O(N) best case orO(N^2) worst case running time + O(1) memory
+//	O(N) best case or O(N^2) worst case running time + O(1) memory
 	public int findKthLargest3(int[] nums, int k) {
 		k = nums.length - k;
 		int index = 0;

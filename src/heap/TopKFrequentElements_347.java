@@ -1,5 +1,7 @@
 package heap;
 
+import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -63,8 +65,8 @@ public class TopKFrequentElements_347 {
 		return res.subList(0, k);
 	}
 
-	// 法3 把 HashMap<Number,frequency>中的Entry放在PriorityQueue中 自定义排序 按freq降序
-	// 理论上是O(n log n) 可是其实很慢？
+	// 法3 把 HashMap<Number,frequency>中的Entry放在PriorityQueue中 大顶堆
+	// 理论上是O（n）+O(K log n) 可是其实很慢？
 	public List<Integer> topKFrequent3(int[] nums, int k) {
 		int len = nums.length;
 		LinkedList<Integer> res = new LinkedList<>();
@@ -80,8 +82,8 @@ public class TopKFrequentElements_347 {
 	    while(res.size() < k)
 			res.add(pq.poll().getKey());
 
-		
-//		或者这样处理queue 自定义排序 按freq升序    大小为k 超过k 就把头部（小的） 删掉 
+//	    O(n log k) 
+//		或者用小顶堆   大小为k 超过k 就把头部（小的） 删掉 
 //	    PriorityQueue<Map.Entry<Integer, Integer>> pq = new PriorityQueue<>((a, b) -> a.getValue()-b.getValue());
 //	    for(Map.Entry<Integer, Integer> entry : counterMap.entrySet()) {
 //	        pq.offer(entry);
@@ -92,5 +94,7 @@ public class TopKFrequentElements_347 {
 //	        res.add(0, pq.poll().getKey());//这是加在头部 实现了顺序变倒序
 //	    }
 	    return res;
+	    
 	}
+
 }

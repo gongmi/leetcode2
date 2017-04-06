@@ -1,5 +1,5 @@
 package linkedList;
-//递归！ 一般人想不到啊~
+//递归！ 一般人想不到啊~ 剑指offer21
 public class Merge2SortedLists_21 {
 	public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
 		if (l1 == null)
