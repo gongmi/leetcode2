@@ -3,11 +3,12 @@ package heap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.PriorityQueue;
+import java.util.Queue;
 
 public class FindKPairsSmallestSums_373 {
 	// 把 pair的comparator 写在类中 比写在 PriorityQueue的构造函数中快多了
 	public List<int[]> kSmallestPairs(int[] nums1, int[] nums2, int k) {
-
+Queue q=new LinkedList();
 		List<int[]> res = new LinkedList<>();
 		if (nums1.length == 0 || nums2.length == 0)
 			return res;
