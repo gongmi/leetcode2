@@ -17,9 +17,7 @@ public class Main_test {
 	}
 
 	public static void main(String[] args) {
-		byte a=(byte)0B10000000;
-		System.out.println(a);
-		String s="wer";
-		s=s+"sef";
+		Permutation test=new Permutation();
+		System.out.println(test.validPermutation(5, 2));
 	}
 }

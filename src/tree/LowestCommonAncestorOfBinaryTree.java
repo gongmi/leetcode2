@@ -28,4 +28,14 @@ public class LowestCommonAncestorOfBinaryTree {
 		return null;
 
 	}
+
+	// 下面的是BST 更简单
+	public TreeNode lowestCommonAncestor2(TreeNode root, TreeNode p, TreeNode q) {
+		if ((p.val <= root.val && root.val <= q.val) || (q.val <= root.val && root.val <= p.val))
+			return root;
+		else if (p.val < root.val && q.val < root.val)
+			return lowestCommonAncestor(root.left, p, q);
+		else
+			return lowestCommonAncestor(root.right, p, q);
+	}
 }

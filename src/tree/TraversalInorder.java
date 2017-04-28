@@ -1,10 +1,6 @@
 package tree;
 
 import java.util.*;
-//We push all the left children of root into the stack until there's no more nodes.
-//Then we pop from the stack which we'd call cur.
-//Add cur to result list
-//Recursively call pushAllLeft() on cur's right child.
 
 public class TraversalInorder {
 	// 第三种 用stack

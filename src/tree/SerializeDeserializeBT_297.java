@@ -2,7 +2,7 @@ package tree;
 
 import java.util.*;
 
-public class SerializeDeserializeBinaryTree_297 {
+public class SerializeDeserializeBT_297 {
 	// public String serialize(TreeNode root) {
 	// if (root == null)
 	// return "$,";
@@ -50,13 +50,13 @@ public class SerializeDeserializeBinaryTree_297 {
 	}
 
 	public TreeNode deserialize(String data) {
-		Deque<String> nodes = new LinkedList<>();
+		Queue<String> nodes = new LinkedList<>();
 		nodes.addAll(Arrays.asList(data.split(spliter)));
 		return buildTree(nodes);
 	}
 
-	private TreeNode buildTree(Deque<String> nodes) {
-		String val = nodes.remove(); // 这很巧妙
+	private TreeNode buildTree(Queue<String> nodes) {
+		String val = nodes.poll(); // 这很巧妙
 		if (val.equals(NN))
 			return null;
 		TreeNode node = new TreeNode(Integer.valueOf(val));

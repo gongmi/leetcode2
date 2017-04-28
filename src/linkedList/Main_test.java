@@ -13,5 +13,8 @@ public class Main_test {
 		     int three = 3;  
 		     System.out.println(first==second);   
 		     System.out.println(first==three);  
+		     String s=" 123 ";
+		     int n=Integer.parseInt(s);
+		     System.out.println(n);
 		    }  
 }

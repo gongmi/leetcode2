@@ -1,4 +1,4 @@
-package Other;
+package math;
 
 public class ValidNumber_65 {
 

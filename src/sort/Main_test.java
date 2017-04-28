@@ -15,7 +15,8 @@ public class Main_test {
 		map1.put(s2,2);
 		map1.put(s3,3);
 		map1.put(s4,4);
-		
+		Collections.binarySearch(list, key, c)
+		Arrays.binarySearch(a, key)
 		Map<Character,Integer> map2=new HashMap<>();
 		map2.put('a',1);
 		map2.put('B',2);

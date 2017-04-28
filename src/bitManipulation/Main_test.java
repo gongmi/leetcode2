@@ -5,8 +5,9 @@ import java.util.*;
 public class Main_test {
 
 	public static void main(String[] args) {
-		
-		System.out.println(-3>>1);
+		String s="80.1.1.1";
+		String[] ss=s.split("\\.");
+		System.out.println(ss.length);
 		
 	}
 }

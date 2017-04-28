@@ -4,8 +4,8 @@ import java.util.*;
 
 public class TraversalPostorder {
 	// 第三种 用stack
-//	pre-order traversal is root-left-right, 
-//	and post order is left-right-root. 
+//	pre  order is root- left-  right, 
+//	post order is left- right- root. 
 //	modify the code for pre-order to make it root-right-left, 
 //	and then reverse the output so that we can get left-right-root .
 	public List<Integer> postorderTraversal(TreeNode root) {

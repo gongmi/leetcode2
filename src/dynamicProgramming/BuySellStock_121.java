@@ -2,45 +2,6 @@ package dynamicProgramming;
 
 
 public class BuySellStock_121 {
-	// public int maxProfit(int[] prices) {
-	// 不敢相信我竟然写出这么傻逼的代码
-	// TreeSet<Integer> set;
-	// TreeMap<Integer, TreeSet<Integer>> map = new TreeMap<Integer,
-	// TreeSet<Integer>>();
-	// for (int i = 0; i < prices.length; i++) {
-	//
-	// if (!map.containsKey(prices[i]))
-	// set = new TreeSet<Integer>();
-	// else
-	// set = map.get(prices[i]);
-	// set.add(i);
-	// map.put(prices[i], set);
-	// }
-	// //leetcode中没有Entry 这个算法虽然我的思路是清晰的 但是看起来太丑了
-	// Entry<Integer, TreeSet<Integer>> s,l;
-	// s= map.firstEntry();
-	// l=map.lastEntry();
-	// while(true)
-	// {int a=0,b=0;
-	// if (s.getValue().first() < l.getValue().last())
-	// return l.getKey() - s.getKey();
-	// else {
-	//
-	// if (map.higherEntry(s.getKey()).getValue().first() < l.getValue().last())
-	//
-	// a= l.getKey() - map.higherEntry(s.getKey()).getKey();
-	//
-	// if (s.getValue().first()<map.lowerEntry(l.getKey()).getValue().last())
-	// b=map.lowerEntry(l.getKey()).getKey() - s.getKey();
-	//
-	// if (a==00&&b==0)
-	// {s=map.higherEntry(s.getKey());
-	// l=map.lowerEntry(l.getKey()); }
-	// else return Math.max(a, b);
-	// }
-	// }
-	// }
-
 	// runtime exception when length is large
 	public int maxProfit(int[] prices) {
 		if (prices.length == 0)
