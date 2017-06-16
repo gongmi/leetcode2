@@ -17,7 +17,8 @@ public class Main_test {
 	}
 
 	public static void main(String[] args) {
-		Permutation test=new Permutation();
-		System.out.println(test.validPermutation(5, 2));
+		String s = "abc";
+		String t = "aeb";
+		System.out.println(s.compareTo(t));
 	}
 }

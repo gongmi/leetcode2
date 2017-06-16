@@ -1,16 +1,17 @@
 package twoPointers;
 
+import java.util.*;
+
 
 public class Test {
 	public static void main(String[] args) {
-		int n=Integer.MIN_VALUE;
-		int m=-n;
-		long exp=-(long)n;
-		System.out.println(n);
-		System.out.println(exp);
-		System.out.println(m);
-		String s="";
-		s.to
+		Integer a=null;
+		System.out.println((Integer)null);
+		System.out.println(1==a);
+		System.out.println(a instanceof Integer);
+		System.out.println(new Integer(1)==a);
+		boolean isTrue=false;
+		if(isTrue=1==1?true:false){}
 	}
 }
 

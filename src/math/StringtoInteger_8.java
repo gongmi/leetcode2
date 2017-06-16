@@ -6,6 +6,7 @@ public class StringtoInteger_8 {
 //	parseInt的源码是用负数来乘的 因为负数-2147483648 比最大正数能多表示一位
 	public int myAtoi2(String str) {
 		str = str.trim();
+		str.indexOf(str);
 		int sign = 1;
 		int i = 0;
 		int res = 0;

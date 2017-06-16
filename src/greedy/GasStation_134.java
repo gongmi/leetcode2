@@ -55,6 +55,7 @@ public class GasStation_134 {
 		int sumCost = 0;
 		int start = 0;
 		int tank = 0;
+		String s="";
 		for (int i = 0; i < gas.length; i++) {
 			sumGas += gas[i];
 			sumCost += cost[i];

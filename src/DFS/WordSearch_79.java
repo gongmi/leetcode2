@@ -1,6 +1,6 @@
 package DFS;
 import java.util.List;
-// 和offer书上的思路一样
+// 和offer 66书上的思路一样
 //与PermutationsII_47相似 都是需要一个used 数组来表征是否用过
 //甚至可以不用used数组 用 board[r][c]='*'来禁用当前这个char 当下一个递归到这个char时 不可能相等board[r][c] == word.charAt(k)
 public class WordSearch_79  {

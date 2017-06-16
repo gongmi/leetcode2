@@ -1,15 +1,13 @@
 package stack;
-import huawei.Main;
 
 import java.util.*;
-
 
 public class Main_test {
 
 	public static void main(String[] args) {
-		Main main =new Main();
-		char[] chs=new char[]{'B','C','1','9','+','+','3','-','A','*','-'};
-
+		DecodeString_394 main = new DecodeString_394();
+		String res = main.decodeString("2[abc]3[cd]ef");
+		System.out.println(res);
 	}
 
 }

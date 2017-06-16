@@ -41,7 +41,7 @@ public class CombinationSum_39 {
 //或者不排序 不过这样就得 都遍历一遍
 	public List<List<Integer>> combinationSum3(int[] nums, int target) {
 		List<List<Integer>> list = new LinkedList<>();
-		backtrack2(list, new LinkedList<Integer>(), nums, target, 0);
+		backtrack3(list, new LinkedList<Integer>(), nums, target, 0);
 		return list;
 	}
 
