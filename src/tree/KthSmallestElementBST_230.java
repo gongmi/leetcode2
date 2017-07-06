@@ -2,7 +2,7 @@ package tree;
 
 import java.util.*;
 
-public class KthSmallestElementBST {
+public class KthSmallestElementBST_230 {
 	// 用了中序遍历的思想 就是 到第k个就停止嘛 
 //	迭代        stack
 	// public int kthSmallest(TreeNode root, int k) {

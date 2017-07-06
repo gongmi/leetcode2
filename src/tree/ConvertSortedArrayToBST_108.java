@@ -2,11 +2,7 @@ package tree;
 
 public class ConvertSortedArrayToBST_108 {
 	public TreeNode sortedArrayToBST(int[] num) {
-		if (num.length == 0)
-			return null;
-
-		TreeNode head = helper(num, 0, num.length - 1);
-		return head;
+		return helper(num, 0, num.length - 1);
 	}
 
 	public TreeNode helper(int[] num, int low, int high) {

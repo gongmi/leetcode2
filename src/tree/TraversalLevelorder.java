@@ -22,12 +22,12 @@ public class TraversalLevelorder {
 			return;
 		if (res.size() <= level)
 			res.add(new LinkedList<Integer>());
-		res.get(level).add(root.val); // 注意这边
+		res.get(level).add(root.val); // 注意这边！！！！！！
 		helper(root.left, level + 1);
 		helper(root.right, level + 1);
 	}
 
-	// 用非递归实现 用queue BFS：
+	// 用非递归实现 用queue BFS：  反而显得复杂 因为这道题要把每一层用【】包起来 所以 要算一下 num = queue.size();
 	public List<List<Integer>> levelOrder(TreeNode root) {
 		List<List<Integer>> res = new LinkedList<>();
 		Queue<TreeNode> queue = new LinkedList<>();
@@ -39,11 +39,13 @@ public class TraversalLevelorder {
 			int num = queue.size();
 			while (num-- > 0) {
 				TreeNode node = queue.poll();
+				subList.add(node.val);
+				
 				if (node.left != null)
 					queue.offer(node.left);
 				if (node.right != null)
 					queue.offer(node.right);
-				subList.add(node.val);
+
 			}
 			res.add(subList);
 		}
