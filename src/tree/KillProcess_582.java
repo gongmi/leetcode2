@@ -14,7 +14,7 @@ public class KillProcess_582 {
 			map.get(ppid.get(i)).add(pid.get(i));
 		}
 		kill(kill);
-		
+
 		return res;
 	}
 

@@ -1,7 +1,7 @@
 package tree;
 
 
-public class RecoverBST_98 {
+public class RecoverBST_99 {
 	// 其实就是中序遍历 从小到大 然后看 不满足 从小到大的两个数
 	// 题目要求了 要 O(1) space 应该使用 TraversalInorderMorris
 	// 下面这种递归 或者stack都是不满足

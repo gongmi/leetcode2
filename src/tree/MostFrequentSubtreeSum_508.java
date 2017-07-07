@@ -12,7 +12,6 @@ public class MostFrequentSubtreeSum_508 {
 
 	public int[] findFrequentTreeSum(TreeNode root) {
 		subSum(root);
-		int max = Integer.MIN_VALUE;
 		List<Integer> res = new LinkedList<>();
 		for (Map.Entry<Integer, Integer> entry : freq.entrySet())
 			if (entry.getValue() == maxCount)
