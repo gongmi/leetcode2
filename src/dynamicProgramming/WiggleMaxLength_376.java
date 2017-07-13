@@ -1,4 +1,5 @@
 package dynamicProgramming;
+
 //
 public class WiggleMaxLength_376 {
 	// 第一版 思路清晰的 就是代码太冗长 但是时间是0ms O(n) time
@@ -60,8 +61,9 @@ public class WiggleMaxLength_376 {
 		}
 		return length;
 	}
-//第二次做的答案 没有讨论开头 用 Integer.MAX_VALUE 在for循环里面包括开头 
-//	模板与IncreasingTripletSubsequence_334相似 只用两个变量就可以了
+
+	// 第二次做的答案 没有讨论开头 用 Integer.MAX_VALUE 在for循环里面包括开头
+	// 模板与IncreasingTripletSubsequence_334相似 只用两个变量就可以了
 	public int wiggleMaxLength2(int[] nums) {
 		int first = Integer.MAX_VALUE, second = Integer.MAX_VALUE;
 		int len = 0;
@@ -74,12 +76,12 @@ public class WiggleMaxLength_376 {
 					second = num;
 					len++;
 				}
-			} else if ((second - first) * (num - second) > 0)
-				second = num;
-			else if ((second - first) * (num - second) < 0) {
-				first = second;
-				second = num;
-				len++;
+			} else {
+				if ((second - first) * (num - second) < 0) {//当满足wiggle时
+					first = second;
+					len++;
+				}
+				second = num;//任何情况下都要替换second  当满足wiggle时 当不满足当满足wiggle时 也要 替换来增大以后的概率哦
 			}
 		}
 		return len;
