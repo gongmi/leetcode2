@@ -24,12 +24,16 @@ public class MaximumSubarray_53 {
 	}
 
 	// 受MaximumSubarrayProduct_152启发的第二版答案
+	// 因为这道题必须选一个！
+	// 所以一开始先选一个
+	// sum = Math.max(sum + nums[i], nums[i]);
+	// 并且sum要么是一个 要么是这个加上前面的多个
 	public int maxSubArray2(int[] nums) {
-		int max = nums[0];
+		int sum = nums[0];
 		int maxSofar = nums[0];
 		for (int i = 1; i < nums.length; i++) {
-			max = Math.max(max + nums[i], nums[i]);
-			maxSofar = Math.max(max, maxSofar);
+			sum = Math.max(sum + nums[i], nums[i]);
+			maxSofar = Math.max(sum, maxSofar);
 		}
 		return maxSofar;
 	}

@@ -3,8 +3,8 @@ package stack;
 import java.util.Stack;
 
 public class ImplementQueueByStacks_232 {
-//	我的方法  只需要修改push
-//	 但是push 的时间复杂度是o（n）
+	// 我的方法 只需要修改push 我只用了一个stack 但是在push的时候 用另一个stack来帮忙 让我把push的内容放入stack的bottom
+	// 但是push 的时间复杂度是o（n）
 	class MyQueue {
 		Stack<Integer> s = new Stack<>();
 
@@ -36,30 +36,31 @@ public class ImplementQueueByStacks_232 {
 			return s.empty();
 		}
 	}
-//	别人的方法  时间复杂度是o（1） 用两个stack
+
+	// 别人的方法 时间复杂度是o（1） 用两个stack
 	class MyQueue2 {
 
-	    Stack<Integer> input = new Stack();
-	    Stack<Integer> output = new Stack();
-	    
-	    public void push(int x) {
-	        input.push(x);
-	    }
+		Stack<Integer> input = new Stack<>();
+		Stack<Integer> output = new Stack<>();
 
-	    public void pop() {
-	        peek();
-	        output.pop();
-	    }
+		public void push(int x) {
+			input.push(x);
+		}
 
-	    public int peek() {
-	        if (output.empty())
-	            while (!input.empty())
-	                output.push(input.pop());
-	        return output.peek();
-	    }
+		public void pop() {
+			peek();
+			output.pop();
+		}
 
-	    public boolean empty() {
-	        return input.empty() && output.empty();
-	    }
+		public int peek() {
+			if (output.empty())
+				while (!input.empty())
+					output.push(input.pop());
+			return output.peek();
+		}
+
+		public boolean empty() {
+			return input.empty() && output.empty();
+		}
 	}
 }
