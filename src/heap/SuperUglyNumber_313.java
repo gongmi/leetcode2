@@ -44,7 +44,7 @@ public class SuperUglyNumber_313 {
 		return ans[n - 1];
 	}
 	//一样的思想  O(kN) 
-//	这其实就是减脂offer的方法 只不过这边用数组来放idx与val 而不只是三个数了
+//	这其实就是剑指offer的方法 只不过这边用数组来放idx与val 而不只是三个数了
 	
 	public int nthSuperUglyNumber1(int n, int[] primes) {
         int[] ugly = new int[n];
@@ -59,7 +59,9 @@ public class SuperUglyNumber_313 {
             next = Integer.MAX_VALUE;
             for (int j = 0; j < primes.length; j++) {
                 //skip duplicate and avoid extra multiplication
-                if (val[j] == ugly[i]) val[j] = ugly[idx[j]++] * primes[j];
+                if (val[j] == ugly[i]){
+                	val[j] = ugly[idx[j]++] * primes[j];
+                }
                 //find next ugly number
                 next = Math.min(next, val[j]);
             }

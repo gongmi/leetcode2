@@ -7,6 +7,8 @@ public class KthLargestElement_215 {
 	// 快速选择排序Quick select 分治法
 //	用快速排序的思想 先把它一分为2  然后判断pivot与k的关系 来决定选哪一边继续partition
 //	O(N) best case or O(N^2) worst case running time + O(1) memory
+//	如果不加三数取中 时间会很慢
+//	加了之后beat 95%
 	public int findKthLargest3(int[] nums, int k) {
 		k = nums.length - k;
 		int index = 0;

@@ -45,6 +45,7 @@ public class LargestRectangleHistogram_84 {
 //	1
 //	14
 //	145
+//	这道题的写法和TrappingRainWater_42相似 都是需要循环的用if来写 但是不自增
 	public int largestRectangleArea2(int[] heights) {
 		Stack<Integer> s = new Stack<Integer>();
 		int index = 0;

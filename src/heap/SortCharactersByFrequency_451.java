@@ -8,6 +8,10 @@ import java.util.PriorityQueue;
 public class SortCharactersByFrequency_451 {
 	//   沿用的 TopKFrequentElements_347 的法3 即用hashmap+priorityqueue
 	// 依然很慢
+	//	注意PriorityQueue是继承了queue 而queue又是一种collection 
+	//	而set也是一种collection
+	//	所以
+	//	collection之间都可以用addAll！！！！！！
 	public String frequencySort(String s) {
         Map<Character,Integer> frequency =new HashMap<>();
         for (char c:s.toCharArray())
@@ -29,8 +33,8 @@ public class SortCharactersByFrequency_451 {
     }
 
 	//   沿用的 TopKFrequentElements_347 的法1
-//	hashmap+bucket sort 
-//	慢
+	//	hashmap+bucket sort 
+	//	慢
 	public String frequencySort2(String s) {
 		Map<Character, Integer> frequency = new HashMap<>();
 		for (char c : s.toCharArray())
@@ -60,10 +64,10 @@ public class SortCharactersByFrequency_451 {
 //	其实就是 上面的bucket sort 但是 他没有用 map来存放 char->frequency
 //	而是用的一个数组 因为存放的是char所以一定是小于256的
 //	并且bucket中不是用linkedlist来存放 这个freq下面的所有char
-//	而是用的string
+//	而是用的string!!!我没想到 惯性用链表解决冲突了！！！！
 //即 freq是 0 1 ... A B C ...  Z a b c d ...  z   255
 //       4 1  ... 3 4 1 ...  2 8 2 1 7 ...  1    2
-//	buckets是      0   1     2    3   4     5    6    7      8 
+//	buckets是                    0   1     2    3   4     5    6    7      8 
 //  数组元素是String     "Ccz"  "b" "A"  "Ba"
 	public String frequencySort3(String s) {
         if(s.length() < 3)

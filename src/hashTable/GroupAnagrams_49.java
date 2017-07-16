@@ -49,8 +49,7 @@ public class GroupAnagrams_49 {
 			Arrays.sort(s_array);
 			String s_sorted = String.valueOf(s_array);
 			// String s_sorted = new String(s_array);
-			if (!map.containsKey(s_sorted))
-				map.put(s_sorted, new LinkedList<String>());
+			map.putIfAbsent(s_sorted, new LinkedList<String>());
 			map.get(s_sorted).add(s);
 		}
 		return new LinkedList<List<String>>(map.values());

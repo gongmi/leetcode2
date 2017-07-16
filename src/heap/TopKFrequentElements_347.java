@@ -11,13 +11,10 @@ import java.util.TreeMap;
 
 public class TopKFrequentElements_347 {
 	
-	// 法1 bucket sort bucket Array
-	//	先 HashMap<Number,frequency>
-	// 其实这个方法挺傻的 为什么要把freq bucket放在一个数组里
-	// 应该是空间换时间 空间是很多浪费的 但是时间复杂度是 O(n)
+	// 法1 map + bucket sort
+	// 时间复杂度是 O(n)
 	public List<Integer> topKFrequent(int[] nums, int k) {
 		int len = nums.length;
-		LinkedList<Integer> res = new LinkedList();
 		Map<Integer, Integer> map = new HashMap<Integer, Integer>();
 
 		for (int n : nums)
@@ -31,7 +28,7 @@ public class TopKFrequentElements_347 {
 				bucket[freq] = new LinkedList<Integer>();
 			bucket[freq].add(num);
 		}
-
+		LinkedList<Integer> res = new LinkedList<>();
 		for (int i = len; res.size() < k; i--)
 			if (bucket[i] != null)
 				res.addAll(bucket[i]);
@@ -89,9 +86,18 @@ public class TopKFrequentElements_347 {
 //	        pq.offer(entry);
 //	        if(pq.size() > k) pq.poll();
 //	    }
+//	    我感觉不应该用上面这种for  因为不应该啥都往里加 会浪费时间 应该先判断一下与顶的大小 
+//        for(Map.Entry<Integer,Integer> entry:map.entrySet()){
+//            if (pq.size()<k){
+//            	pq.offer(entry);
+//            }else if (pq.size()==k&&entry.getValue()>pq.peek().getValue()){
+//            	pq.offer(entry);
+//            	pq.poll();
+//          }  
+//        }
 //	    
 //	    while(!pq.isEmpty()) {
-//	        res.add(0, pq.poll().getKey());//这是加在头部 实现了顺序变倒序
+//	        res.add(0, pq.poll().getKey());//这是加在头部 实现了顺序变倒序 其实不用 题目没有要求 list要按freq排序
 //	    }
 	    return res;
 	    

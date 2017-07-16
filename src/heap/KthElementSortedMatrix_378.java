@@ -3,13 +3,15 @@ package heap;
 import java.util.PriorityQueue;
 
 public class KthElementSortedMatrix_378 {
+//	heap中只放k个数
 	// top答案   110ms PriorityQueue的构造函数中写上comparator
 	
 	// 27 ms compareTo写在类中  
 	public int kthSmallest(int[][] matrix, int k) {
 	        int n=matrix.length;
 	        PriorityQueue<Tuple> pq=new  PriorityQueue<>();
-	        for(int i=0;i<n;i++)
+	        int bound = Math.min(matrix.length ,k);
+	        for(int i=0;i<bound;i++)
 	        pq.offer(new Tuple(0,i,matrix[0][i]));
 	        
 	        for(int i=0;i<k-1;i++)
