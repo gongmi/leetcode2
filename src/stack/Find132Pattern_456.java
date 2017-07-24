@@ -57,7 +57,7 @@ public class Find132Pattern_456 {
 		for (int num : nums) {
 			if (num <= min) {  //当遇到当前的min时 永远存起来 不要去stack中做任何事情
 				min = num;
-			} else {  //当遇到一个num比 int min 大时
+			} else {  //当遇到一个num比  min 大时
 				while (!stack.empty()) {
 					if (stack.peek() >= num) // num <= pair的min 
 						break;//说明它和当前min这个pair和stack中的pair不会重合 （在stack pair的右边）

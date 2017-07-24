@@ -11,6 +11,7 @@ import java.util.List;
 // Time Complexity will be O(n)
 // 我之前的方法都是O(n^2)
 //这道题我的本子上写的很复杂 其实看代码 很简单的 不用去考虑别的那些char
+//主要是要想清楚 当j加入时 与i离开时的思路
 public class FindAllAnagrams_438 {
 
 	public List<Integer> findAnagrams(String s, String p) {
@@ -22,8 +23,9 @@ public class FindAllAnagrams_438 {
 		int left = 0, right = 0, count = p.length();
 
 		while (right < s.length()) {
-			if ((freq[s.charAt(right) - 'a']--) > 0)  //如果这里别的那些char进来了 或者多的p里的char进来了
-				count--;                                //都会在freq里被置为负的
+			if ((freq[s.charAt(right) - 'a']--) > 0)   
+														
+				count--;                              //如果未自减之前是>0 说明是freq中需要的char 只有这种情况count才-- 
 
 			if (count == 0)
 				res.add(left);
@@ -32,7 +34,8 @@ public class FindAllAnagrams_438 {
 			if ((right - left) != p.length())
 				continue;
 
-			if ((freq[s.charAt(left) - 'a']++) >= 0)  //如果是负的 这里会被排除的 因此 其实只有freq数组里的char在起作用
+			if ((freq[s.charAt(left) - 'a']++) >= 0)  //如果未自增之前是>=0的 说明这个char是freqs中有用的char 
+														// 如果是其他或者多的 那么未自增之前会是被j进来时置为负数
 				count++;
 
 			left++;

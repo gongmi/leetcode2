@@ -16,7 +16,9 @@ public class InsertIntervals_57 {
 			newInterval.end = Math.max(newInterval.end, intervals.get(i).end);
 			i++;
 		}
+		LinkedList<Integer> list=new LinkedList<>();
 		result.add(newInterval);
+		result.se
 		while (i < intervals.size())
 			result.add(intervals.get(i++));
 		return result;
