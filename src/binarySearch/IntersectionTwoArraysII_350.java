@@ -13,7 +13,14 @@ import java.util.Set;
 //为什么可以  因为是二维数组 二维数组是一维数组组成的数组
 //因为一维数组 其实也是一个引用
 
+
+
+
+//What if nums1's size is small compared to nums2's size? Which algorithm is better?
+//What if elements of nums2 are stored on disk, and the memory is limited such that you cannot load all elements into the memory at once?
+
 public class IntersectionTwoArraysII_350 {
+	//What if the given array is already sorted? How would you optimize your algorithm?
 	// 法1 sort后 2 pointers Time complexity: O(nlogn)
 	public int[] intersect(int[] nums1, int[] nums2) {
 

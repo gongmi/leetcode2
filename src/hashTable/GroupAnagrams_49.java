@@ -20,6 +20,8 @@ public class GroupAnagrams_49 {
 	// list的构造可以把任何Collection的放进去 （除了map以外都是collection）
 	public List<List<String>> groupAnagrams(String[] strs) {
 		Map<String, List<String>> map = new HashMap<>();
+		List
+		ConcurrentHashMap chm
 		for (String s : strs) {
 			char[] s_array = s.toCharArray();
 			Arrays.sort(s_array);
