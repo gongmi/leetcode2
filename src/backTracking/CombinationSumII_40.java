@@ -18,7 +18,7 @@ public class CombinationSumII_40 {
 	private void backtrack(List<List<Integer>> list, List<Integer> tempList,
 			int[] candidates, int remain, int start) {
 		for (int i = start; i < candidates.length && remain >= candidates[i]; i++) {
-			if (i > start && candidates[i] == candidates[i - 1])
+			if (i > start && candidates[i] == candidates[i - 1]) //这句话的处理很厉害
 				continue;
 			tempList.add(candidates[i]);
 			if (remain == candidates[i])
