@@ -20,7 +20,6 @@ public class FriendCircles_547 {
 				++count;
 			}
 		}
-		int i=3;
 		return count;
 	}
 
