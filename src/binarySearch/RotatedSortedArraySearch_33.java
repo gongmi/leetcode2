@@ -10,7 +10,8 @@ public class RotatedSortedArraySearch_33 {
 		while (left <= right) {
 			int mid = left + (right - left) / 2;
 			if (nums[mid] == target) {
-				res = mid; return res;
+				res = mid; 
+				return res;
 			}
 
 			if (nums[mid] < nums[right]) {
