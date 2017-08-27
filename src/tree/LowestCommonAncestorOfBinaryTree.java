@@ -19,23 +19,23 @@ public class LowestCommonAncestorOfBinaryTree {
 			return root;
 		TreeNode left = lowestCommonAncestor(root.left, p, q);
 		TreeNode right = lowestCommonAncestor(root.right, p, q);
-		if (left != null && right != null)
-			return root;
-		if (left != null && right == null)
-			return left;
-		if (left == null && right != null)
+		if (left == null)
 			return right;
-		return null;
+		if (right == null)
+			return left;
+		return root;
 
 	}
 
 	// 下面的是BST 更简单
-	public TreeNode lowestCommonAncestor2(TreeNode root, TreeNode p, TreeNode q) {
-		if ((p.val <= root.val && root.val <= q.val) || (q.val <= root.val && root.val <= p.val))
-			return root;
-		else if (p.val < root.val && q.val < root.val)
-			return lowestCommonAncestor(root.left, p, q);
-		else
-			return lowestCommonAncestor(root.right, p, q);
-	}
+    public TreeNode lowestCommonAncestor2(TreeNode root, TreeNode p, TreeNode q) {
+        if (root==null) return root;
+        if (root.val>p.val&&root.val>q.val){
+            return lowestCommonAncestor(root.left,p,q);
+        }else if (root.val<p.val&&root.val<q.val){
+              return lowestCommonAncestor(root.right,p,q);
+        }else{
+            return root;
+        }
+    }
 }

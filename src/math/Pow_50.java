@@ -1,6 +1,6 @@
 package math;
 
-//attention 这道题就是剑指offer
+//attention 这道题就是剑指offer(见 offer下面的 这道题的思路)
 //但是nowcoder的OJ对特殊情况的测试用例比较少
 //leetcode上有当n=Integer.MIN_VALUE 好像是新加的case
 //这里请注意-n=Integer.MIN_VALUE overflow

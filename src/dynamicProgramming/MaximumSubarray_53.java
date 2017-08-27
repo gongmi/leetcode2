@@ -28,6 +28,9 @@ public class MaximumSubarray_53 {
 	// 所以一开始先选一个
 	// sum = Math.max(sum + nums[i], nums[i]);
 	// 并且sum要么是一个 要么是这个加上前面的多个
+
+	// 剑指offer p173有公式
+
 	public int maxSubArray2(int[] nums) {
 		int sum = nums[0];
 		int maxSofar = nums[0];
@@ -36,5 +39,23 @@ public class MaximumSubarray_53 {
 			maxSofar = Math.max(sum, maxSofar);
 		}
 		return maxSofar;
+	}
+
+	// 2017.08.22 与上面一样的思路
+	public int maxSubArray3(int[] nums) {
+		if (nums.length == 0) {
+			return 0;
+		}
+		int max = nums[0];
+		int res = nums[0];
+		for (int i = 1; i < nums.length; i++) {
+			if (max < 0) {
+				max = nums[i];
+			} else {
+				max = max + nums[i];
+			}
+			res = Math.max(res, max);
+		}
+		return res;
 	}
 }

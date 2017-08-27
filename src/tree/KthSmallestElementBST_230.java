@@ -54,7 +54,7 @@ public class KthSmallestElementBST_230 {
 	        } else if (k > count + 1) {
 	            return kthSmallest(root.right, k-1-count); // 1 is counted as current node
 	        }
-	        
+	        Deque<Integer> queue =new LinkedList<>();
 	        return root.val;
 	    }
 	    
