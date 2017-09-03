@@ -1,17 +1,12 @@
 package trie;
 
 class TrieNode {
-//	public char val;  并不需要这个 因为我根本不用存和char有关的值  我只需要存它的index就知道它了
 	public boolean isWord;
-	public TrieNode[] children = new TrieNode[26];
+	public TrieNode[] next;
 
 	public TrieNode() {
+		next = new TrieNode[26];
 	}
-
-//	TrieNode(char c) {
-//		TrieNode node = new TrieNode();
-//		node.val = c;
-//	}
 }
 
 public class Trie {
@@ -19,41 +14,39 @@ public class Trie {
 
 	public Trie() {
 		root = new TrieNode();
-//		root.val = ' ';
 	}
 
 	public void insert(String word) {
-		TrieNode ws = root;
+		TrieNode node = root;
 		for (int i = 0; i < word.length(); i++) {
 			char c = word.charAt(i);
-			if (ws.children[c - 'a'] == null) {
-				ws.children[c - 'a'] = new TrieNode();
+			if (node.next[c - 'a'] == null) {
+				node.next[c - 'a'] = new TrieNode();
 			}
-			ws = ws.children[c - 'a'];
+			node = node.next[c - 'a'];
 		}
-		ws.isWord = true;
+		node.isWord = true;
 	}
 
 	public boolean search(String word) {
-		TrieNode ws = root;
+		TrieNode node = root;
 		for (int i = 0; i < word.length(); i++) {
 			char c = word.charAt(i);
-			if (ws.children[c - 'a'] == null)
+			if (node.next[c - 'a'] == null)
 				return false;
-			ws = ws.children[c - 'a'];
+			node = node.next[c - 'a'];
 		}
-		return ws.isWord;
+		return node.isWord;
 	}
 
 	public boolean startsWith(String prefix) {
-		TrieNode ws = root;
+		TrieNode node = root;
 		for (int i = 0; i < prefix.length(); i++) {
 			char c = prefix.charAt(i);
-			if (ws.children[c - 'a'] == null)
+			if (node.next[c - 'a'] == null)
 				return false;
-			ws = ws.children[c - 'a'];
+			node = node.next[c - 'a'];
 		}
 		return true;
 	}
 }
-

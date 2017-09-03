@@ -3,7 +3,7 @@ package dynamicProgramming;
 
 //与算法导论的 最长公共子序列相似 Longest Common Subsequence
 
-public class LongestPalindromicSubsequence_516 {
+public class PalindromicSubsequenceLongest_516 {
 
 	public int longestPalindromeSubseq(String s) {
 		int len = s.length();

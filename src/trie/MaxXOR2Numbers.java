@@ -17,26 +17,28 @@ public class MaxXOR2Numbers {
 	public int findMaximumXOR(int[] nums) {
 		Trie root = new Trie();
 		Trie curTrie = root;
+
 		for (int num : nums) {
+			curTrie = root;
 			for (int i = 31; i >= 0; i--) {
 				int bit = (num >>> i) & 1;
 				if (curTrie.child[bit] == null)
 					curTrie.child[bit] = new Trie();
-				else
-					curTrie = curTrie.child[bit];
+				curTrie = curTrie.child[bit];
 			}
 		}
-		curTrie = root;
+
 		int max = 0;
+		int CurNumMax = 0;
 
 		for (int num : nums) {
-			int CurNumMax = 0;
+			CurNumMax = 0;
+			curTrie = root;
 			for (int i = 31; i >= 0; i--) {
 				int bit = (num >>> i) & 1;
-
 				if (curTrie.child[bit ^ 1] != null) {
 					curTrie = curTrie.child[bit ^ 1];
-					CurNumMax = CurNumMax + (1 << i);
+					CurNumMax += (1 << i);
 				} else
 					curTrie = curTrie.child[bit];
 			}

@@ -28,16 +28,22 @@ public class MicroSoft_SylcTest {
 			root.right = remove(root.right, root.val);
 		} else if (root.left != null & root.right == null) {
 			TreeNode child = root.left;
-			child.parent = root.parent;
 			root = child;
 		} else if (root.left == null & root.right != null) {
 			TreeNode child = root.right;
-			child.parent = root.parent;
 			root = child;
 		} else
 			root = null;
 
 		return root;
+	}
+
+	private TreeNode findMin(TreeNode t) {
+		if (t == null)
+			return null;
+		else if (t.left == null)
+			return t;
+		return findMin(t.left);
 	}
 
 	public int getK(TreeNode root, int k) {

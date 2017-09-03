@@ -9,13 +9,13 @@ public class SortList_148 {
 		if (head == null || head.next == null)
 			return head;
 		ListNode f = head, s = head;
-		f = f.next.next;  //fast 先走一步 这样 s的位置就是mid的前一个位置
+		f = f.next.next; // fast 先走一步 这样 s的位置就是mid的前一个位置
 		while (f != null && f.next != null) {
 			f = f.next.next;
 			s = s.next;
 		}
 
-		ListNode l2 = sortList(s.next); //s.next才是mid
+		ListNode l2 = sortList(s.next); // s.next才是mid
 		s.next = null; // break the linked list
 		return Merge2SortedLists_21.mergeTwoLists(sortList(head), l2);
 
@@ -34,6 +34,11 @@ public class SortList_148 {
 			QuickSort(pivot.next, end);
 		}
 	}
+
+	// 就是把所有小于pivot放在左边 大于pivot放在右边
+	// 但是不能用左右指针 因为是单向链表
+	// 所以用的是 见笔记！！！！
+	// 此处有点像 86. Partition List 但是86是不能改变相对位置 即稳定的
 
 	private ListNode partition(ListNode begin, ListNode end) {
 		int pivot = begin.val;

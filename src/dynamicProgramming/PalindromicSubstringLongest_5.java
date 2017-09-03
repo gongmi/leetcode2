@@ -5,7 +5,7 @@ package dynamicProgramming;
 //因为是subSequence  所以不能j-- k++
 //而是只能定住一边比如j 令k++
 //这样的时间复杂度恐怕是O(n*n*n) 三个for
-public class LongestPalindromicSubstring_5 {
+public class PalindromicSubstringLongest_5 {
 	private int low = 0, maxLen = 1;
 
 	public String longestPalindrome(String s) {
