@@ -24,6 +24,7 @@ public class ConnectedComponents_323 {
 
 	public int countComponents(int n, int[][] edges) {
 		visited = new boolean[n];
+		// 可以不用hashmap 用数组即可 因为输入的编号都是有有序的 如果无序才用hashmap
 		HashMap<Integer, List<Integer>> adj = new HashMap<>();
 		for (int i = 0; i < n; i++)
 			adj.put(i, new LinkedList<Integer>());
