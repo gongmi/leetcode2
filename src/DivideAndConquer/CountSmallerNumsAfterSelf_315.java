@@ -1,4 +1,4 @@
-package sort;
+package DivideAndConquer;
 
 import java.util.*;
 
