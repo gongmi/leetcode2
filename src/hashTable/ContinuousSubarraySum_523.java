@@ -3,7 +3,7 @@ package hashTable;
 import java.util.*;
 
 public class ContinuousSubarraySum_523 {
-
+//tag没有hash 但是应该是hash
 	// 这道题和SubarraySumEqualsK_MaxSize_325很像
 	// 只不过是 k的倍数 存sum%K即可
 	// 只需要找存不存在 所以用hashset即可

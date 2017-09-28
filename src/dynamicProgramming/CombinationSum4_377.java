@@ -3,6 +3,7 @@ package dynamicProgramming;
 //与70爬楼梯那道题是一样的思路 找出一个递归关系式，然后用备忘的方式
 //但是找出这个递归关系式就不简单 其实一开始我想到了的 但是还是对自己没有信心 
 // bottom-up 自底向上 
+//其实就是Permutation 因为与顺序有关
 public class CombinationSum4_377 {
 	public int combinationSum4(int[] nums, int target) {
 

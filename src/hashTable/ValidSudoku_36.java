@@ -1,4 +1,4 @@
-package Other;
+package hashTable;
 
 import java.util.HashSet;
 //每个i都会同时检测 第i行 第列 第i个方格是否valid

@@ -1,7 +1,12 @@
-package Other;
+package Array;
 
 public class RotateImage_48 {
-//	我的答案 
+//	我的答案   移动 1397  2684 
+	/*
+	 * 1 2 3     7 8 9     7 4 1
+	 * 4 5 6  => 4 5 6  => 8 5 2
+	 * 7 8 9     1 2 3     9 6 3
+	 * */
 	public void rotate(int[][] matrix) {
 		int temp = 0;
 		int n = matrix.length;

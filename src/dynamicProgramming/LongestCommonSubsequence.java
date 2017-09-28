@@ -1,7 +1,5 @@
 package dynamicProgramming;
 
-//最长公共子串
-
 //最长公共子序列是：
 //dp[i][j] 表示子串str1[0...i]和子串str[0...j]的最长公共子序列
 
@@ -16,12 +14,6 @@ public class LongestCommonSubsequence {
 		int len1 = str1.length();
 		int len2 = str2.length();
 		int[][] dp = new int[len1 + 1][len2 + 1];
-
-		for (int i = 0; i <= len1; i++) {
-			for (int j = 0; j <= len2; j++) {
-				dp[i][j] = 0;
-			}
-		}
 
 		for (int i = 1; i <= len1; i++) {
 			for (int j = 1; j <= len2; j++) {

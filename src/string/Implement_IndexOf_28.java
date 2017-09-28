@@ -1,8 +1,8 @@
-package twoPointers;
+package string;
 
 import java.util.*;
 
-public class IndexOf_28 {
+public class Implement_IndexOf_28 {
 	// top Ö»ÄÜÄ¤°İ
 	public int strStr(String haystack, String needle) {
 		for (int i = 0;; i++) {
