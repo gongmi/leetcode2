@@ -6,10 +6,10 @@ package dynamicProgramming;
 //两式相减，可得f(n,k)-f(n,k-1)=f(n-1,k)-f(n-1,k-n)。
 //递推公式为f(n,k)=f(n,k-1)+f(n-1,k)-f(n-1,k-n)。
 //然后动态规划可得。
-public class Permutation2 {
-	int mod = 10000;
+public class KInversePairsArray_629 {
+	int mod = 1000000007;
 
-	public int Inversions(int n, int k) {
+	public int kInversePairs(int n, int k) {
 		int[][] dp = new int[n + 1][k + 1];
 		for (int i = 1; i <= n; i++)
 			dp[i][0] = 1;
@@ -20,7 +20,7 @@ public class Permutation2 {
 				tmp2 = dp[i][j - 1];
 				if (j - i >= 0)
 					tmp3 = dp[i - 1][j - i];
-				dp[i][j] = tmp1 + tmp2 - tmp3;
+				dp[i][j] = ((tmp1 + tmp2 - tmp3) % mod + mod) % mod;
 			}
 		}
 		return dp[n][k];
