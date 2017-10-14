@@ -3,9 +3,10 @@ package DivideAndConquer;
 import java.util.*;
 
 public class DifferentWaysAddParentheses_241 {
+	// 我的第一版答案 有重复的((2*3)-(4*5)) = -14 算了两遍
 	List<Integer> ret = new ArrayList<Integer>();
 
-	public List<Integer> diffWaysToCompute(String input) {
+	public List<Integer> diffWaysToCompute2(String input) {
 		helper(input);
 		return ret;
 	}
@@ -44,5 +45,44 @@ public class DifferentWaysAddParentheses_241 {
 		}
 		String[] array = input.split("-");
 		return Integer.parseInt(array[0]) - Integer.parseInt(array[1]);
+	}
+
+	// This is a brilliant solution except that
+	// may calculate the same expression several times when input is same.
+	// I modify a little bit and use a HashMap to memorize results for an input
+	public List<Integer> diffWaysToCompute(String input) {
+		List<Integer> ret = new ArrayList<Integer>();
+		ArrayList<Integer> indexs = new ArrayList<>();
+		char[] a = input.toCharArray();
+		for (int i = 0; i < a.length; i++) {
+			if ("+-*".contains(a[i] + "") && i != 0 && !"+-*".contains(a[i - 1] + "")) {
+				indexs.add(i);
+			}
+		}
+		if (indexs.size() == 0) {
+			ret.add(Integer.parseInt(input));
+			return ret;
+		}
+		for (int i : indexs) {
+			List<Integer> L = diffWaysToCompute(input.substring(0, i));
+			List<Integer> R = diffWaysToCompute(input.substring(i + 1));
+			for (int l : L) {
+				for (int r : R) {
+					switch (input.charAt(i)) {
+					case '+':
+						ret.add(l + r);
+						break;
+					case '-':
+						ret.add(l - r);
+						break;
+					case '*':
+						ret.add(l * r);
+					}
+
+				}
+			}
+
+		}
+		return ret;
 	}
 }
