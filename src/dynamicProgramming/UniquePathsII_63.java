@@ -53,11 +53,7 @@ public class UniquePathsII_63 {//和之前那道题类似 只是要用2维的方法了
         for(int i = 1; i < m; i++)
             for(int j = 1; j < n; j++)
                 obstacleGrid[i][j] = obstacleGrid[i][j] == 1 ? 0 : obstacleGrid[i - 1][j] + obstacleGrid[i][j - 1];
-//        [[-2,-3,3],[-5,-10,1],[10,30,-5]]   
-//        [[1,-3,3],[0,-2,0],[-3,-3,-3]
-        //return lower right cell (the end cell)
         
         return obstacleGrid[m - 1][n - 1];
     }
 }
-

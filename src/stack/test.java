@@ -6,6 +6,8 @@ import DivideAndConquer.ReversePairs_493;
 
 public class test {
 	public static void main(String[] Args) {
-		System.out.println(2 << -1);
+		String s = "bbbcccd";
+		s.replace("a", "b");
+		System.out.println(s);
 	}
 }
